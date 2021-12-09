@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>edu.opensource</groupId>
+	<artifactId>blog</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>jbake blog</name>
+	<description>jbake blog</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>8</maven.compiler.source>
+		<maven.compiler.target>8</maven.compiler.target>
+		<java.version>8</java.version>
+
+		<jbake-maven-plugin>0.3.6-rc.2</jbake-maven-plugin>
+		<jbake-core>2.7.0-rc.5</jbake-core>
+		<asciidoctorj>2.5.2</asciidoctorj>
+		<freemarker>2.3.31</freemarker>
+		<snakeyaml>1.29</snakeyaml>
+		<flexmark>0.62.2</flexmark>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.jbake</groupId>
+				<artifactId>jbake-maven-plugin</artifactId>
+				<version>${jbake-maven-plugin}</version>
+				<executions>
+					<execution>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<!-- <inputDirectory>${project.basedir}</inputDirectory> -->
+					<!-- <outputDirectory>${project.build.directory}/website</outputDirectory> -->
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.jbake</groupId>
+						<artifactId>jbake-core</artifactId>
+						<version>${jbake-core}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.asciidoctor</groupId>
+						<artifactId>asciidoctorj</artifactId>
+						<version>${asciidoctorj}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.freemarker</groupId>
+						<artifactId>freemarker</artifactId>
+						<version>${freemarker}</version>
+					</dependency>
+					<dependency>
+                        <groupId>com.vladsch.flexmark</groupId>
+                        <artifactId>flexmark</artifactId>
+                        <version>${flexmark}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.vladsch.flexmark</groupId>
+                        <artifactId>flexmark-profile-pegdown</artifactId>
+                        <version>${flexmark}</version>
+                    </dependency>
+                    <dependency>
+						<groupId>org.yaml</groupId>
+						<artifactId>snakeyaml</artifactId>
+						<version>${snakeyaml}</version>
+                    </dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+</project>
