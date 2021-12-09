@@ -38,7 +38,7 @@
 				</executions>
 				<configuration>
 					<!-- <inputDirectory>${project.basedir}</inputDirectory> -->
-					<!-- <outputDirectory>${project.build.directory}/website</outputDirectory> -->
+					<outputDirectory>./docs</outputDirectory>
 				</configuration>
 				<dependencies>
 					<dependency>
